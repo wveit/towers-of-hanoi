@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Towers of Hanoi</title>
+        <style>
+            body {
+                background-color: gray;
+            }
+
+            #main-canvas {
+                display: block;
+                margin: 50px auto;
+                background-color: white;
+            }
+
+            #ring-buttons {
+                width: 700px;
+                margin: 50px auto;
+                background-color: white;
+                display: flex;
+                justify-content: space-around;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="main-canvas" width="700" height="400"></canvas>
+
+        <div id="ring-buttons">
+            <button id="mv0to2">&lt;--</button>
+            <button id="mv0to1">--&gt;</button>
+            <button id="mv1to0">&lt;--</button>
+            <button id="mv1to2">--&gt;</button>
+            <button id="mv2to1">&lt;--</button>
+            <button id="mv2to0">--&gt;</button>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
