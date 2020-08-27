@@ -1,6 +1,6 @@
 const game = {
     numRings: 5,
-    towers: [[0, 1, 2, 3, 4], [], []],
+    towers: [[0, 1, 2, 3, 4, 5, 6, 7], [], []],
 };
 
 const colors = [
@@ -83,11 +83,18 @@ class GameDisplay {
     }
 }
 
-function moveRing(sourceTower, destTower) {
+function moveRing(sourceTowerIndex, destTowerIndex) {
     const towers = game.towers;
-    if (towers[sourceTower].length > 0) {
-        const value = towers[sourceTower].pop();
-        towers[destTower].push(value);
+    const sourceTower = towers[sourceTowerIndex];
+    const destTower = towers[destTowerIndex];
+    if (
+        sourceTower.length > 0 &&
+        (destTower.length === 0 ||
+            sourceTower[sourceTower.length - 1] >
+                destTower[destTower.length - 1])
+    ) {
+        const value = sourceTower.pop();
+        destTower.push(value);
     }
 }
 
