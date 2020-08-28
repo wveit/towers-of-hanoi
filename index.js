@@ -1,7 +1,8 @@
 const game = {
-    numRings: 5,
-    towers: [[0, 1, 2, 3, 4, 5, 6, 7], [], []],
+    towers: [[], [], []],
 };
+
+const defaultNumRings = 5;
 
 const colors = [
     '#ff3333',
@@ -111,3 +112,18 @@ for (let i = 0; i <= 2; i++) {
         }
     }
 }
+
+function resetGame(numRings) {
+    game.towers = [[], [], []];
+    for (let i = 0; i < numRings; i++) {
+        game.towers[0].push(i);
+    }
+    display.draw(game);
+}
+
+document.querySelector('#new-game-button').onclick = function () {
+    const numRings = Number(document.querySelector('#num-rings-input').value);
+    resetGame(numRings);
+};
+
+resetGame(defaultNumRings);

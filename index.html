@@ -5,22 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Towers of Hanoi</title>
         <style>
+            * {
+                box-sizing: border-box;
+            }
             body {
                 background-color: gray;
             }
 
             #main-canvas {
                 display: block;
-                margin: 50px auto;
+                margin: 20px auto;
                 background-color: white;
             }
 
             #ring-buttons {
                 width: 700px;
-                margin: 50px auto;
+                margin: 20px auto;
+                padding: 10px 0;
                 background-color: white;
                 display: flex;
                 justify-content: space-around;
+            }
+
+            #game-controls {
+                width: 700px;
+                margin: 20px auto;
+                padding: 10px;
+                background-color: white;
             }
         </style>
     </head>
@@ -34,6 +45,18 @@
             <button id="mv1to2">--&gt;</button>
             <button id="mv2to1">&lt;--</button>
             <button id="mv2to0">--&gt;</button>
+        </div>
+
+        <div id="game-controls">
+            <button id="new-game-button">New Game</button> with
+            <input
+                id="num-rings-input"
+                type="number"
+                value="5"
+                min="1"
+                max="8"
+            />
+            rings.
         </div>
 
         <script src="index.js"></script>
